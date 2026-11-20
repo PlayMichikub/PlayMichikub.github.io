@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Michikub: an ad-free number-tile game for 2 to 4 friends.">
+
+  <!--
+    Uncomment the tag below to lay the app out underneath the parts of the
+    screen that the device obstructs, such as a display cutout, the rounded
+    corners of the screen, or a home indicator.
+
+    Without it, the browser keeps the app clear of them, and `SafeArea` and
+    `MediaQuery.paddingOf` report no padding. With it, the app covers the whole
+    screen, and it is up to the app to keep its own content out of the way,
+    which is what `SafeArea` is for.
+  -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> -->
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- Added to an iPhone/iPad Home Screen: opens without Safari's bars. -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Michikub">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png?v=0.1.14">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=0.1.14"/>
+  <meta name="theme-color" content="#2A0E07">
+
+
+  <!--
+    Join links (?join=ABCD, from a QR code or a shared invite) open the Android app when it's
+    installed: an Android browser is sent to an intent link before the game loads. Without the
+    app, the browser follows the fallback, the same link plus web=1, which stays on the web (no
+    loop). See lib/net/app_handoff.dart (kept in step with it by test/app_handoff_test.dart).
+  -->
+  <script>
+    (function () {
+      try {
+        var q = new URLSearchParams(location.search);
+        var code = (q.get('join') || '').toUpperCase();
+        if (!/^[A-Z]{4,8}$/.test(code) || q.has('web') || !/Android/i.test(navigator.userAgent)) return;
+        var fallback = location.origin + location.pathname + '?join=' + code + '&web=1';
+        location.replace('intent://join/' + code + '#Intent;scheme=michikub;package=com.michikub.michikub;' +
+          'S.browser_fallback_url=' + encodeURIComponent(fallback) + ';end');
+      } catch (e) {}
+    })();
+  </script>
+
+  <title>Michikub</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
+
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

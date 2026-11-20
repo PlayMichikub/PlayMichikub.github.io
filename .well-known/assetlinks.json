@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.michikub.michikub",
+      "sha256_cert_fingerprints": ["38:72:57:4E:C7:79:EF:43:77:13:0C:CC:29:32:20:FD:84:43:FF:B0:4C:DA:B3:95:5C:A4:B0:51:0B:95:84:B7"]
+    }
+  }
+]
